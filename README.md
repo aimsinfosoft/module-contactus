@@ -3,15 +3,17 @@
 This module is save contact us form data in database and show data in backend grid.
 
 Installation Steps:
-1. Unpack the extension ZIP file on your computer.
-2. Connect to your website source folder with FTP/SFTP client and upload all the files and
-folders from the extension package to the corresponding app/code folder of your
-Magento installation:
-3. Connect to your Magento directory with SSH.
-4. Run 4 following commands:
-• php bin/magento setup:upgrade
-• php bin/magento setup:di:compile
-• php bin/magento setup:static-content:deploy
-• php bin/magento cache:flush
+1. Download the <a href="https://github.com/aimsinfosoft/module-contactus/archive/master.zip."> latest version here </a>.
+2. Extract master.zip file to app/code/Aimsinfosoft/Contactus ; You should create a folder path app/code/Aimsinfosoft/Contactus if not exist.
+3. Run following commands:
 
-# NOTES : Please take backup before upload the module. if you face any issue than please contact us sales@aimsinfosoft.com
+<pre>
+ php bin/magento setup:upgrade <br>
+ php bin/magento setup:di:compile <br>
+ php bin/magento setup:static-conten:deploy <br>
+ php bin/magento cache:flush <br>
+</pre>
+
+<a href="https://github.com/aimsinfosoft/module-contactus/blob/master/UserGuide.pdf">Click here for user guide</a>
+# NOTES : 
+Please take backup before upload the module. if you any query or question than please contact us sales@aimsinfosoft.com

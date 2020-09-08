@@ -1,6 +1,4 @@
-# module-contactus
-
-Aimsinfosoft Contactus for Magento 2
+# Aimsinfosoft Contactus for Magento 2
 
 This module is save contact us form data in database and show data in backend grid.
 
@@ -15,3 +13,5 @@ Magento installation:
 • php bin/magento setup:di:compile
 • php bin/magento setup:static-content:deploy
 • php bin/magento cache:flush
+
+# NOTES : Please take backup before upload the module. if you face any issue than please contact us sales@aimsinfosoft.com

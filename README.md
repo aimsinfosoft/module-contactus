@@ -1,5 +1,7 @@
 # Aimsinfosoft Contactus for Magento 2
 
+Supported Magento Version 2.3.x and 2.4.x
+
 This module is save contact us form data in database and show data in backend grid.
 
 Installation Steps:

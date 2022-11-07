@@ -84,15 +84,19 @@ class InstallSchema implements InstallSchemaInterface
                     \Magento\Framework\DB\Ddl\Table::TYPE_TIMESTAMP,
                     null,
                     [
-                        'nullable' => false, 
+                        'nullable' => false,
                         'default' => \Magento\Framework\DB\Ddl\Table::TIMESTAMP_INIT
                     ],
                     'Created At'
                 )
+
+
                 ->setComment('News Table')
                 ->setOption('type', 'InnoDB')
                 ->setOption('charset', 'utf8');
             $installer->getConnection()->createTable($table);
+
+
         }
 
         $installer->endSetup();

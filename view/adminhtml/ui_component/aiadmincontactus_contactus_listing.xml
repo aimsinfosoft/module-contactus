@@ -40,7 +40,7 @@
             </item>
         </item>
     </argument>
-    
+
       <!-- define the date source (must be the same than in argument/item/provider and argument/js_config/deps -->
     <dataSource name="aiadmincontactus_contactus_listing_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
@@ -61,7 +61,7 @@
             </argument>
         </argument>
     </dataSource>
-    
+
     <container name="listing_top">
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
@@ -101,7 +101,7 @@
                 </item>
             </argument>
         </filterSearch>
-        <filters name="listing_filters">
+       <filters name="listing_filters">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="columnsProvider" xsi:type="string">aiadmincontactus_contactus_listing.aiadmincontactus_contactus_listing.aiadmincontactus_contactus_columns</item>
@@ -127,7 +127,7 @@
                 <item name="observers" xsi:type="array">
                     <item name="column" xsi:type="string">column</item>
                 </item>
-            </argument>            
+            </argument>
         </filters>
         <massaction name="listing_massaction">
             <argument name="data" xsi:type="array">
@@ -148,7 +148,7 @@
                         </item>
                     </item>
                 </argument>
-            </action>           
+            </action>
             <action name="edit">
                 <argument name="data" xsi:type="array">
                     <item name="config" xsi:type="array">
@@ -161,7 +161,7 @@
                     </item>
                 </argument>
             </action>
-            
+
         </massaction>
         <paging name="listing_paging">
             <argument name="data" xsi:type="array">
@@ -175,7 +175,7 @@
             </argument>
         </paging>
     </container>
-    
+
     <!-- define the columns of my grid -->
     <columns name="aiadmincontactus_contactus_columns">
 
@@ -233,7 +233,7 @@
                 </item>
             </argument>
         </column>
-        
+
         <column name="name">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -253,7 +253,7 @@
                 </item>
             </argument>
         </column>
-        
+
         <column name="email">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -268,12 +268,13 @@
                         <item name="editorType" xsi:type="string">text</item>
                         <item name="validation" xsi:type="array">
                             <item name="required-entry" xsi:type="boolean">true</item>
+                            <item name="validate-email" xsi:type="boolean">true</item>
                         </item>
                     </item>
                 </item>
             </argument>
         </column>
-        
+
          <column name="telephone">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -288,12 +289,13 @@
                         <item name="editorType" xsi:type="string">text</item>
                         <item name="validation" xsi:type="array">
                             <item name="required-entry" xsi:type="boolean">true</item>
+                            <item name="validate-number" xsi:type="boolean">true</item>
                         </item>
                     </item>
                 </item>
             </argument>
         </column>
-         
+
         <column name="comment">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">

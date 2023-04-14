@@ -18,7 +18,7 @@
  * @copyright   Copyright (c) Aimsinfosoft (https://www.aimsinfosoft.com)
  * @license     https://www.aimsinfosoft.com/LICENSE.txt
  */
- 
+
 namespace Aimsinfosoft\Contactus\Block\Adminhtml\Contactus\Edit;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
@@ -27,11 +27,11 @@ use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
  * Class SaveAndContinueButton
  * @package Aimsinfosoft\Contactus\Block\Adminhtml\Contactus\Edit
  */
-
 class SaveAndContinueButton extends GenericButton implements ButtonProviderInterface
 {
     /**
      * @return array
+     * get save and continue edit button data
      */
     public function getButtonData()
     {

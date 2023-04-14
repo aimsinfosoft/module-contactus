@@ -27,7 +27,6 @@ use Magento\Backend\App\Action;
  * Class Edit
  * @package Aimsinfosoft\Contactus\Controller\Adminhtml\Contactus
  */
-
 class Edit extends \Magento\Backend\App\Action
 {
     const ADMIN_RESOURCE = 'Aimsinfosoft_Contactus::save';
@@ -45,6 +44,7 @@ class Edit extends \Magento\Backend\App\Action
      * @var \Aimsinfosoft\Contactus\Model\Contactus
      */
     protected $model;
+
     /**
      * @param Action\Context $context
      * @param \Magento\Framework\View\Result\PageFactory $resultPageFactory
@@ -56,12 +56,14 @@ class Edit extends \Magento\Backend\App\Action
         \Magento\Framework\View\Result\PageFactory $resultPageFactory,
         \Aimsinfosoft\Contactus\Model\Contactus $model,
         \Magento\Framework\Registry $registry
-    ) {
+    )
+    {
         $this->resultPageFactory = $resultPageFactory;
         $this->_coreRegistry = $registry;
         $this->model = $model;
         parent::__construct($context);
     }
+
     /**
      * Init actions
      *
@@ -75,6 +77,10 @@ class Edit extends \Magento\Backend\App\Action
             ->addBreadcrumb(__('Manage Contactus'), __('Manage Contactus'));
         return $resultPage;
     }
+    
+    /**
+     *Edit the contact record
+     */
     public function execute()
     {
 
@@ -84,7 +90,7 @@ class Edit extends \Magento\Backend\App\Action
             $this->model->load($id);
             if (!$this->model->getId()) {
                 $this->messageManager
-                ->addError(__('This record no longer exists.'));
+                    ->addError(__('This record no longer exists.'));
                 $resultRedirect = $this->resultRedirectFactory->create();
                 return $resultRedirect->setPath('*/*/');
             }

@@ -18,7 +18,7 @@
  * @copyright   Copyright (c) Aimsinfosoft (https://www.aimsinfosoft.com)
  * @license     https://www.aimsinfosoft.com/LICENSE.txt
  */
- 
+
 namespace Aimsinfosoft\Contactus\Block\Adminhtml\Contactus\Edit;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
@@ -27,12 +27,12 @@ use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
  * Class DeleteButton
  * @package Aimsinfosoft\Contactus\Block\Adminhtml\Contactus\Edit
  */
-
 class DeleteButton extends GenericButton implements ButtonProviderInterface
 {
 
     /**
      * @return array
+     * get delete button data
      */
     public function getButtonData()
     {
@@ -42,8 +42,8 @@ class DeleteButton extends GenericButton implements ButtonProviderInterface
                 'label' => __('Delete'),
                 'class' => 'delete',
                 'on_click' => 'deleteConfirm(\'' . __(
-                    'Are you sure you want to do this?'
-                ) . '\', \'' . $this->getDeleteUrl() . '\')',
+                        'Are you sure you want to do this?'
+                    ) . '\', \'' . $this->getDeleteUrl() . '\')',
                 'sort_order' => 20,
             ];
         }

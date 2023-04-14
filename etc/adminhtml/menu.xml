@@ -20,9 +20,12 @@
  * @license     https://www.aimsinfosoft.com/LICENSE.txt
  */
 -->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="Aimsinfosoft_Contactus::base" title="Aimsinfosoft" module="Aimsinfosoft_Contactus" sortOrder="30" resource="Aimsinfosoft_Contactus::contactus"/>
-        <add id="Aimsinfosoft_Contactus::manage_aicontactus" title="Manage Contactus" module="Aimsinfosoft_Contactus" sortOrder="45" parent="Aimsinfosoft_Contactus::base" action="aiadmincontactus/contactus" resource="Aimsinfosoft_Contactus::manage_aicontactus"/>
+        <!-- <add id="Aimsinfosoft_Contactus::base" title="Aimsinfosoft" module="Aimsinfosoft_Contactus" sortOrder="30" resource="Aimsinfosoft_Contactus::contactus"/> -->
+        <add id="Aimsinfosoft_Contactus::manage_aicontactus" title="Manage Contactus" module="Aimsinfosoft_Contactus"
+             sortOrder="45" parent="Magento_Customer::customer" action="aiadmincontactus/contactus"
+             resource="Aimsinfosoft_Contactus::manage_aicontactus"/>
     </menu>
 </config>

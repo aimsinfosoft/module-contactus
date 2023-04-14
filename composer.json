@@ -1,8 +1,8 @@
 {
-  "name": "aims-infosoft/contactus",
-  "description": "A Magento 2 module that save Contact us details",
+  "name": "aimsinfosoft/contactus",
+  "description": "This module has been developed to prevent your shiny magento store from Spams and Bot Blocker while user registration and newsletter subscription.",
   "type": "magento2-module",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "license": [
     "OSL-3.0",
     "AFL-3.0"
@@ -15,12 +15,13 @@
     }
   ],
   "require": {
-    "php": "~7.1.3|~7.2.0"
+    "php": "~8.1.0||~8.2.0",
+    "Aimsinfosoft/Base": "~1.0.0"
   },
   "autoload": {
     "files": [ "registration.php" ],
     "psr-4": {
-      "Aimsinfosoft\\Contactus\\": ""
+      "Aimsinfosoft\\StopSpamMails\\": ""
     }
   }
 }

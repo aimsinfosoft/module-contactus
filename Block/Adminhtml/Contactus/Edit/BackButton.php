@@ -26,13 +26,15 @@ use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 /**
  * Class BackButton
  * @package Aimsinfosoft\Contactus\Block\Adminhtml\Contactus\Edit
+ * Back to contactus grid
  */
-
 class BackButton extends GenericButton implements ButtonProviderInterface
 {
+
     /**
      * @return array
-    */
+     * get button information
+     */
     public function getButtonData()
     {
         return [
@@ -42,11 +44,12 @@ class BackButton extends GenericButton implements ButtonProviderInterface
             'sort_order' => 10
         ];
     }
+
     /**
      * Get URL for back (reset) button
      *
      * @return string
-    */
+     */
     public function getBackUrl()
     {
         return $this->getUrl('*/*/');

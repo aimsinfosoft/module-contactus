@@ -18,7 +18,7 @@
  * @copyright   Copyright (c) Aimsinfosoft (https://www.aimsinfosoft.com)
  * @license     https://www.aimsinfosoft.com/LICENSE.txt
  */
- 
+
 namespace Aimsinfosoft\Contactus\Ui\Component;
 
 use Magento\Framework\Api\FilterBuilder;
@@ -26,6 +26,10 @@ use Magento\Framework\Api\Search\SearchCriteriaBuilder;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\View\Element\UiComponent\DataProvider\Reporting;
 
+    /**
+     * Class DataProvider
+     * @package Aimsinfosoft\Contactus\Ui\Component
+     */
 class DataProvider extends \Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider
 {
     /**
@@ -49,7 +53,8 @@ class DataProvider extends \Magento\Framework\View\Element\UiComponent\DataProvi
         FilterBuilder $filterBuilder,
         array $meta = [],
         array $data = []
-    ) {
+    )
+    {
         parent::__construct(
             $name,
             $primaryFieldName,

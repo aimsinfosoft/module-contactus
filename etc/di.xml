@@ -20,14 +20,18 @@
  * @license     https://www.aimsinfosoft.com/LICENSE.txt
  */
 -->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">   
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Contact\Controller\Index\Post">
-        <plugin name="aimsinfosoft-contact-controller" type="Aimsinfosoft\Contactus\Plugin\ContactusPlugin" sortOrder="3"/>
+        <plugin name="aimsinfosoft-contact-controller" type="Aimsinfosoft\Contactus\Plugin\ContactusPlugin"
+                sortOrder="3"/>
     </type>
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
-                <item name="aiadmincontactus_contactus_listing_data_source" xsi:type="string">Aimsinfosoft\Contactus\Model\ResourceModel\Contactus\Grid\Collection</item>                
+                <item name="aiadmincontactus_contactus_listing_data_source" xsi:type="string">
+                    Aimsinfosoft\Contactus\Model\ResourceModel\Contactus\Grid\Collection
+                </item>
             </argument>
         </arguments>
     </type>
@@ -36,23 +40,32 @@
             <argument name="mainTable" xsi:type="string">aimsinfosoft_contactus</argument>
             <argument name="eventPrefix" xsi:type="string">aiadminaimsinfosoft_contactus_grid_collection</argument>
             <argument name="eventObject" xsi:type="string">aiadminaimsinfosoft_contactus_grid_collection</argument>
-            <argument name="resourceModel" xsi:type="string">Aimsinfosoft\Contactus\Model\ResourceModel\Aimsinfosoft</argument>
+            <argument name="resourceModel" xsi:type="string">Aimsinfosoft\Contactus\Model\ResourceModel\Aimsinfosoft
+            </argument>
         </arguments>
     </type>
-    
-    <virtualType name="AimsinfosoftcontactusGirdFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+
+    <virtualType name="AimsinfosoftcontactusGirdFilterPool"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
         <arguments>
             <argument name="appliers" xsi:type="array">
-                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
-                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+                <item name="regular" xsi:type="object">
+                    Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter
+                </item>
+                <item name="fulltext" xsi:type="object">
+                    Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter
+                </item>
             </argument>
         </arguments>
     </virtualType>
-    
-    <virtualType name="AimsinfosoftcontactusGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+
+    <virtualType name="AimsinfosoftcontactusGridDataProvider"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
         <arguments>
-            <argument name="collection" xsi:type="object" shared="false">Aimsinfosoft\Contactus\Model\ResourceModel\Contactus\Collection</argument>
+            <argument name="collection" xsi:type="object" shared="false">
+                Aimsinfosoft\Contactus\Model\ResourceModel\Contactus\Collection
+            </argument>
             <argument name="filterPool" xsi:type="object" shared="false">AimsinfosoftcontactusGirdFilterPool</argument>
         </arguments>
-    </virtualType>      
+    </virtualType>
 </config>

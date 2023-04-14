@@ -1,19 +1,18 @@
-# Aimsinfosoft Contactus for Magento 2
+# Key Features:
 
-This module is save contact us form data in database and show data in backend grid.
+=>Get Contact Inquiry From Frontend And Show It To Admin In Grid.
+=>Easy To Manage Records From Backend.
+=>Easy To Remove Unwanted Records From Backend.
+=>Easy To Filter Records.
 
-Installation Steps:
-1. Download the <a href="https://github.com/aimsinfosoft/module-contactus/archive/master.zip."> latest version here </a>.
-2. Extract master.zip file to app/code/Aimsinfosoft/Contactus ; You should create a folder path app/code/Aimsinfosoft/Contactus if not exist.
-3. Run following commands:
+# Installation Steps:
 
-<pre>
- php bin/magento setup:upgrade <br>
- php bin/magento setup:di:compile <br>
- php bin/magento setup:static-conten:deploy <br>
- php bin/magento cache:flush <br>
-</pre>
+Download The Module From Your Account To Our Store <a href="https://store.aimsinfosoft.com/index.php/aimsinfosoft-contact-us-module-magento-2.html">Click here to download </a>.
+Extract Master.Zip File To App/Code/Aimsinfosoft/Contactus ; You Have To Create A Folder Path App/Code/Aimsinfosoft/Contactus If Not Exist.
 
-<a href="https://github.com/aimsinfosoft/module-contactus/blob/master/UserGuide.pdf">Click here for user guide</a>
-# NOTES : 
-Please take backup before upload the module. if you any query or question than please contact us sales@aimsinfosoft.com
+# Run Following Commands:
+           php bin/magento setup:upgrade
+           php bin/magento setup:di:compile
+           php bin/magento setup:static-content:deploy -f
+           php bin/magento cache:flush 
+Once, You Will Successfully Install The Module You Will Have The Backend Grid In You Admin Panel.

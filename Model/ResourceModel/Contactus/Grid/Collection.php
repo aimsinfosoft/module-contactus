@@ -35,6 +35,18 @@ class Collection extends QuoteCollection implements SearchResultInterface
      * @var AggregationInterface
      */
     protected $aggregations;
+    /**
+     * @param \Magento\Framework\Data\Collection\EntityFactoryInterface $entityFactory
+     * @param \Psr\Log\LoggerInterface $logger
+     * @param \Magento\Framework\Data\Collection\Db\FetchStrategyInterface $fetchStrategy
+     * @param $mainTable
+     * @param $eventPrefix
+     * @param $eventObject
+     * @param $resourceModel
+     * @param $model
+     * @param $connection
+     * @param \Magento\Framework\Model\ResourceModel\Db\AbstractDb $resource
+     */
     public function __construct(
         \Magento\Framework\Data\Collection\EntityFactoryInterface $entityFactory,
         \Psr\Log\LoggerInterface $logger,
@@ -47,8 +59,8 @@ class Collection extends QuoteCollection implements SearchResultInterface
         $model = 'Magento\Framework\View\Element\UiComponent\DataProvider\Document',
         $connection = null,
         \Magento\Framework\Model\ResourceModel\Db\AbstractDb $resource = null
-    ) {
-       
+    )
+    {
         parent::__construct(
             $entityFactory,
             $logger,
@@ -62,6 +74,7 @@ class Collection extends QuoteCollection implements SearchResultInterface
         $this->_init($model, $resourceModel);
         $this->setMainTable($mainTable);
     }
+
     /**
      * @return AggregationInterface
      */
@@ -69,6 +82,7 @@ class Collection extends QuoteCollection implements SearchResultInterface
     {
         return $this->aggregations;
     }
+
     /**
      * @param AggregationInterface $aggregations
      * @return $this
@@ -77,6 +91,7 @@ class Collection extends QuoteCollection implements SearchResultInterface
     {
         $this->aggregations = $aggregations;
     }
+
     /**
      * Retrieve all ids for collection
      * Backward compatibility with EAV collection
@@ -89,6 +104,7 @@ class Collection extends QuoteCollection implements SearchResultInterface
     {
         return $this->getConnection()->fetchCol($this->_getAllIdsSelect($limit, $offset), $this->_bindParams);
     }
+
     /**
      * Get search criteria.
      *
@@ -98,6 +114,7 @@ class Collection extends QuoteCollection implements SearchResultInterface
     {
         return null;
     }
+
     /**
      * Set search criteria.
      *
@@ -109,6 +126,7 @@ class Collection extends QuoteCollection implements SearchResultInterface
     {
         return $this;
     }
+
     /**
      * Get total count.
      *
@@ -118,6 +136,7 @@ class Collection extends QuoteCollection implements SearchResultInterface
     {
         return $this->getSize();
     }
+
     /**
      * Set total count.
      *
@@ -129,6 +148,7 @@ class Collection extends QuoteCollection implements SearchResultInterface
     {
         return $this;
     }
+
     /**
      * Set items list.
      *

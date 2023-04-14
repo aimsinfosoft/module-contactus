@@ -18,7 +18,7 @@
  * @copyright   Copyright (c) Aimsinfosoft (https://www.aimsinfosoft.com)
  * @license     https://www.aimsinfosoft.com/LICENSE.txt
  */
- 
+
 namespace Aimsinfosoft\Contactus\Block\Adminhtml\Contactus\Grid\Renderer\Action;
 
 use Magento\Store\Api\StoreResolverInterface;
@@ -27,20 +27,21 @@ use Magento\Store\Api\StoreResolverInterface;
  * Class UrlBuilder
  * @package Aimsinfosoft\Contactus\Block\Adminhtml\Contactus\Grid\Renderer\Action
  */
-
 class UrlBuilder
 {
     /**
      * @var \Magento\Framework\UrlInterface
-    */
+     */
     protected $frontendUrlBuilder;
+
     /**
      * @param \Magento\Framework\UrlInterface $frontendUrlBuilder
-    */
+     */
     public function __construct(\Magento\Framework\UrlInterface $frontendUrlBuilder)
     {
         $this->frontendUrlBuilder = $frontendUrlBuilder;
     }
+
     /**
      * Get action url
      *

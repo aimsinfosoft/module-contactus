@@ -20,7 +20,8 @@
  * @license     https://www.aimsinfosoft.com/LICENSE.txt
  */
 -->
-<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
             <item name="provider" xsi:type="string">aiadmincontactus_contactus_form.contactus_form_data_source</item>
@@ -34,10 +35,14 @@
         <item name="template" xsi:type="string">templates/form/collapsible</item>
         <item name="buttons" xsi:type="array">
             <item name="back" xsi:type="string">Aimsinfosoft\Contactus\Block\Adminhtml\Contactus\Edit\BackButton</item>
-            <item name="delete" xsi:type="string">Aimsinfosoft\Contactus\Block\Adminhtml\Contactus\Edit\DeleteButton</item>
-            <item name="reset" xsi:type="string">Aimsinfosoft\Contactus\Block\Adminhtml\Contactus\Edit\ResetButton</item>
+            <item name="delete" xsi:type="string">Aimsinfosoft\Contactus\Block\Adminhtml\Contactus\Edit\DeleteButton
+            </item>
+            <item name="reset" xsi:type="string">Aimsinfosoft\Contactus\Block\Adminhtml\Contactus\Edit\ResetButton
+            </item>
             <item name="save" xsi:type="string">Aimsinfosoft\Contactus\Block\Adminhtml\Contactus\Edit\SaveButton</item>
-            <item name="save_and_continue" xsi:type="string">Aimsinfosoft\Contactus\Block\Adminhtml\Contactus\Edit\SaveAndContinueButton</item>
+            <item name="save_and_continue" xsi:type="string">
+                Aimsinfosoft\Contactus\Block\Adminhtml\Contactus\Edit\SaveAndContinueButton
+            </item>
         </item>
     </argument>
     <dataSource name="contactus_form_data_source">
@@ -87,7 +92,8 @@
                     <item name="sortOrder" xsi:type="number">20</item>
                     <item name="dataScope" xsi:type="string">name</item>
                     <item name="validation" xsi:type="array">
-                    <item name="required-entry" xsi:type="boolean">true</item>
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                        <item name="validate-data" xsi:type="boolean">true</item>
                     </item>
                 </item>
             </argument>
@@ -102,7 +108,7 @@
                     <item name="sortOrder" xsi:type="number">21</item>
                     <item name="dataScope" xsi:type="string">email</item>
                     <item name="validation" xsi:type="array">
-                    <item name="required-entry" xsi:type="boolean">true</item>
+                        <item name="required-entry" xsi:type="boolean">true</item>
                         <item name="validate-email" xsi:type="boolean">true</item>
                     </item>
                 </item>
@@ -119,8 +125,9 @@
                     <item name="sortOrder" xsi:type="number">22</item>
                     <item name="dataScope" xsi:type="string">telephone</item>
                     <item name="validation" xsi:type="array">
-                    <item name="required-entry" xsi:type="boolean">true</item>
-                    <item name="validate-number" xsi:type="boolean">true</item>
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                        <item name="validate-number" xsi:type="boolean">true</item>
+                        <item name="min_text_length" xsi:type="string">10</item>
                     </item>
                 </item>
             </argument>

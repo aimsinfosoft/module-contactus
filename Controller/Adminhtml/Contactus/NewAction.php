@@ -25,17 +25,16 @@ namespace Aimsinfosoft\Contactus\Controller\Adminhtml\Contactus;
  * Class NewAction
  * @package Aimsinfosoft\Contactus\Controller\Adminhtml\Contactus
  */
-
 class NewAction extends \Magento\Backend\App\Action
 {
     /**
      * Authorization level of a basic admin session
      *
-    */
+     */
     const ADMIN_RESOURCE = 'Aimsinfosoft_Contactus::save';
     /**
-    * @var \Magento\Framework\View\Result\PageFactory
-    */
+     * @var \Magento\Framework\View\Result\PageFactory
+     */
     protected $resultForwardFactory;
 
     /**
@@ -45,7 +44,8 @@ class NewAction extends \Magento\Backend\App\Action
     public function __construct(
         \Magento\Backend\App\Action\Context $context,
         \Magento\Backend\Model\View\Result\ForwardFactory $resultForwardFactory
-    ) {
+    )
+    {
         $this->resultForwardFactory = $resultForwardFactory;
         parent::__construct($context);
     }

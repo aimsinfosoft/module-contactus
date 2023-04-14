@@ -30,7 +30,6 @@ use Aimsinfosoft\Contactus\Model\ResourceModel\Contactus\CollectionFactory;
  * Class MassDelete
  * @package Aimsinfosoft\Contactus\Controller\Adminhtml\Contactus
  */
-
 class MassDelete extends \Magento\Backend\App\Action
 {
     /**
@@ -53,6 +52,7 @@ class MassDelete extends \Magento\Backend\App\Action
         $this->collectionFactory = $collectionFactory;
         parent::__construct($context);
     }
+
     /**
      * Execute action
      *

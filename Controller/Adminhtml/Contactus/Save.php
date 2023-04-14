@@ -30,7 +30,6 @@ use Magento\Framework\Exception\LocalizedException;
  * Class Save
  * @package Aimsinfosoft\Contactus\Controller\Adminhtml\Contactus
  */
-
 class Save extends \Magento\Backend\App\Action
 {
     const ADMIN_RESOURCE = 'Aimsinfosoft_Contactus::save';
@@ -50,6 +49,7 @@ class Save extends \Magento\Backend\App\Action
     /**
      * @param Action\Context $context
      * @param PostDataProcessor $dataProcessor
+     * @param Contactus $model
      * @param DataPersistorInterface $dataPersistor
      */
     public function __construct(
@@ -57,12 +57,14 @@ class Save extends \Magento\Backend\App\Action
         PostDataProcessor $dataProcessor,
         Contactus $model,
         DataPersistorInterface $dataPersistor
-    ) {
+    )
+    {
         $this->dataProcessor = $dataProcessor;
         $this->dataPersistor = $dataPersistor;
         $this->model = $model;
         parent::__construct($context);
     }
+
     /**
      * Save action
      *
@@ -70,12 +72,12 @@ class Save extends \Magento\Backend\App\Action
      */
     public function execute()
     {
+
         $data = $this->getRequest()->getPostValue();
         /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
         $resultRedirect = $this->resultRedirectFactory->create();
         if ($data) {
             $data = $this->dataProcessor->filter($data);
-           
             if (empty($data['id'])) {
                 $data['id'] = null;
             }
@@ -101,7 +103,7 @@ class Save extends \Magento\Backend\App\Action
                     return $resultRedirect->setPath(
                         '*/*/edit',
                         ['id' => $this->model->getId(),
-                         '_current' => true]
+                            '_current' => true]
                     );
                 }
                 return $resultRedirect->setPath('*/*/');

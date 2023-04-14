@@ -30,25 +30,33 @@ use Aimsinfosoft\Contactus\Model\Contactus as ModelContactus;
  * Class InlineEdit
  * @package Aimsinfosoft\Contactus\Controller\Adminhtml\Contactus
  */
-
 class InlineEdit extends \Magento\Backend\App\Action
 {
     protected $dataProcessor;
     protected $jsonFactory;
     protected $ContactusModel;
-
+    /**
+     * @param Action\Context $context
+     * @param PostDataProcessor $dataProcessor
+     * @param ModelContactus $ContactusModel
+     * @param JsonFactory $jsonFactory
+     */
     public function __construct(
         Context $context,
         PostDataProcessor $dataProcessor,
         ModelContactus $ContactusModel,
         JsonFactory $jsonFactory
-    ) {
+    )
+    {
         parent::__construct($context);
         $this->dataProcessor = $dataProcessor;
         $this->jsonFactory = $jsonFactory;
         $this->ContactusModel = $ContactusModel;
     }
 
+    /**
+     * Inline edit contact record
+     */
     public function execute()
     {
         $resultJson = $this->jsonFactory->create();
@@ -64,7 +72,7 @@ class InlineEdit extends \Magento\Backend\App\Action
 
         foreach (array_keys($postItems) as $Id) {
             $Contactus = $this->ContactusModel->load($Id);
-           
+
             try {
                 $Data = $this->filterPost($postItems[$Id]);
                 $this->validatePost($Data, $Contactus, $error, $messages);
@@ -92,6 +100,10 @@ class InlineEdit extends \Magento\Backend\App\Action
         ]);
     }
 
+      /**
+     * filter contact record
+     * @param $postData
+     */
     protected function filterPost($postData = [])
     {
         $pageData = $this->dataProcessor->filter($postData);
@@ -101,13 +113,21 @@ class InlineEdit extends \Magento\Backend\App\Action
             : null;
         return $pageData;
     }
-    
+
+     /**
+     * Validate  post request
+     * @param $pageData
+     * @param \Aimsinfosoft\Contactus\Model\Contactus $page
+     * @param $error
+     * @param $messages
+     */
     protected function validatePost(
         array $pageData,
         \Aimsinfosoft\Contactus\Model\Contactus $page,
         &$error,
         array &$messages
-    ) {
+    )
+    {
         if (!($this->dataProcessor->validate($pageData) && $this->dataProcessor->validateRequireEntry($pageData))) {
             $error = true;
             foreach ($this->messageManager->getMessages(true)->getItems() as $error) {
@@ -115,17 +135,29 @@ class InlineEdit extends \Magento\Backend\App\Action
             }
         }
     }
-     
+
+    /** 
+     * check if error in Page ID
+     * @param ModelContactus $page
+     * @param $errorText
+     * */
     protected function getErrorWithPageId(ModelContactus $page, $errorText)
     {
         return '[Page ID: ' . $page->getId() . '] ' . $errorText;
     }
-      
+
+    /** 
+     * check if error in Page ID
+     * @param ModelContactus $page
+     * @param $extendedPageData
+     * @param $pageData
+     * */
     public function setContactusTableData(
         ModelContactus $page,
         array $extendedPageData,
         array $pageData
-    ) {
+    )
+    {
         $page->setData(array_merge($page->getData(), $extendedPageData, $pageData));
         return $this;
     }

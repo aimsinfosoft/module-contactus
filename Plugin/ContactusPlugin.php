@@ -25,30 +25,35 @@ namespace Aimsinfosoft\Contactus\Plugin;
  * Class ContactusPlugin
  * @package Aimsinfosoft\Contactus\Plugin
  */
-
 class ContactusPlugin
-{    
+{
     /**
      * @var \Aimsinfosoft\Contactus\Model\Contactus
      */
     protected $contactus;
- 
+
     /**
      * Plugin constructor.
      *
      * @param \Aimsinfosoft\Contactus\Model\Contactus $contactus
      */
     public function __construct(
-        \Aimsinfosoft\Contactus\Model\Contactus $contactus       
-    ) {
-        $this->contactus = $contactus;        
+        \Aimsinfosoft\Contactus\Model\Contactus $contactus
+    )
+    {
+        $this->contactus = $contactus;
     }
 
+    /**
+     * Save the contact info
+     * @param \Magento\Contact\Controller\Index\Post $subject
+     * @param \Closure $proceed
+     * */
     public function aroundExecute(\Magento\Contact\Controller\Index\Post $subject, \Closure $proceed)
-    {   
+    {
         $request = $subject->getRequest()->getPostValue();
         if ($this->validatedParams($request)) {
-            $this->contactus->setData($request); 
+            $this->contactus->setData($request);
             $this->contactus->save();
         }
         $returnValue = $proceed();
@@ -57,14 +62,14 @@ class ContactusPlugin
 
     /**
      * @return array
-     * @throws \Exception
+     * @throws \Magento\Framework\Exception\Exception
      */
     private function validatedParams($request)
-    {
+    {   
         if (trim($request['name']) === '') {
             throw new LocalizedException(__('Enter the Name and try again.'));
         }
-        if (trim($request['comment']) === '') {
+        if (trim($request['comment']) ==' ') {
             throw new LocalizedException(__('Enter the comment and try again.'));
         }
         if (false === \strpos($request['email'], '@')) {

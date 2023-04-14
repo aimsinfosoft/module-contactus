@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Aimsinfosoft
  *
@@ -14,13 +15,12 @@
  * version in the future.
  *
  * @category    Aimsinfosoft
- * @package     Aimsinfosoft_Contactus
+ * @package     Aimsinfosoft_StopSpamMails
  * @copyright   Copyright (c) Aimsinfosoft (https://www.aimsinfosoft.com)
  * @license     https://www.aimsinfosoft.com/LICENSE.txt
  */
- 
-    \Magento\Framework\Component\ComponentRegistrar::register(
-        \Magento\Framework\Component\ComponentRegistrar::MODULE,
-        'Aimsinfosoft_Contactus',
-        __DIR__
-    );
+\Magento\Framework\Component\ComponentRegistrar::register(
+    \Magento\Framework\Component\ComponentRegistrar::MODULE,
+    'Aimsinfosoft_Contactus',
+    __DIR__
+);

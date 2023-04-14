@@ -28,7 +28,6 @@ use Magento\Framework\App\Request\DataPersistorInterface;
  * Class DataProvider
  * @package Aimsinfosoft\Contactus\Model\Contactus
  */
-
 class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
 {
 
@@ -64,9 +63,10 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         array $meta = [],
         array $data = []
-    ) {
+    )
+    {
         $this->collection = $blockCollectionFactory->create();
-        $this->_storeManager=$storeManager;
+        $this->_storeManager = $storeManager;
         $this->dataPersistor = $dataPersistor;
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);
     }
@@ -83,7 +83,7 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
             return $this->loadedData;
         }
         $items = $this->collection->getItems();
-        
+
         foreach ($items as $page) {
             $this->loadedData[$page->getId()] = $page->getData();
         }

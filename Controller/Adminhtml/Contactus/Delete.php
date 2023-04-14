@@ -18,7 +18,7 @@
  * @copyright   Copyright (c) Aimsinfosoft (https://www.aimsinfosoft.com)
  * @license     https://www.aimsinfosoft.com/LICENSE.txt
  */
- 
+
 namespace Aimsinfosoft\Contactus\Controller\Adminhtml\Contactus;
 
 use Magento\Backend\App\Action;
@@ -27,7 +27,6 @@ use Magento\Backend\App\Action;
  * Class Delete
  * @package Aimsinfosoft\Contactus\Controller\Adminhtml\Contactus
  */
-
 class Delete extends \Magento\Backend\App\Action
 {
     const ADMIN_RESOURCE = 'Aimsinfosoft_Contactus::contactus_delete';
@@ -35,13 +34,22 @@ class Delete extends \Magento\Backend\App\Action
      * @var \Aimsinfosoft\Contactus\Model\Contactus
      */
     protected $model;
+    /**
+     * @param \Action\Context $context
+     * @param \Aimsinfosoft\Contactus\Model\Contactus $model
+     */
     public function __construct(
         Action\Context $context,
         \Aimsinfosoft\Contactus\Model\Contactus $model
-    ) {
+    )
+    {
         $this->model = $model;
         parent::__construct($context);
     }
+    
+    /**
+     * For delete contact record
+     */
     public function execute()
     {
         $id = $this->getRequest()->getParam('id');

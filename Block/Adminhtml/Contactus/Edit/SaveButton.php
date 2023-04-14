@@ -18,7 +18,7 @@
  * @copyright   Copyright (c) Aimsinfosoft (https://www.aimsinfosoft.com)
  * @license     https://www.aimsinfosoft.com/LICENSE.txt
  */
- 
+
 namespace Aimsinfosoft\Contactus\Block\Adminhtml\Contactus\Edit;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
@@ -31,6 +31,7 @@ class SaveButton extends GenericButton implements ButtonProviderInterface
 {
     /**
      * @return array
+     * get save button data
      */
     public function getButtonData()
     {

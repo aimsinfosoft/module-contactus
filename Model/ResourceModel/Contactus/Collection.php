@@ -27,11 +27,11 @@ use \Aimsinfosoft\Contactus\Model\ResourceModel\AbstractCollection;
  * Class Collection
  * @package Aimsinfosoft\Contactus\Model\ResourceModel\Contactus
  */
-
 class Collection extends AbstractCollection
 {
     protected $_idFieldName = 'id';
     protected $_previewFlag;
+
     protected function _construct()
     {
         $this->_init(

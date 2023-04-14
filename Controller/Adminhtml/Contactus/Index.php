@@ -28,7 +28,6 @@ use Magento\Framework\View\Result\PageFactory;
  * Class Index
  * @package Aimsinfosoft\Contactus\Controller\Adminhtml\Contactus
  */
-
 class Index extends \Magento\Backend\App\Action
 {
     /**
@@ -43,10 +42,12 @@ class Index extends \Magento\Backend\App\Action
     public function __construct(
         Context $context,
         PageFactory $resultPageFactory
-    ) {
+    )
+    {
         parent::__construct($context);
         $this->resultPageFactory = $resultPageFactory;
     }
+
     /**
      * Index action
      *

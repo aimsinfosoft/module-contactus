@@ -18,7 +18,7 @@
  * @copyright   Copyright (c) Aimsinfosoft (https://www.aimsinfosoft.com)
  * @license     https://www.aimsinfosoft.com/LICENSE.txt
  */
- 
+
 namespace Aimsinfosoft\Contactus\Block\Adminhtml\Contactus\Edit;
 
 use Magento\Backend\Block\Widget\Context;
@@ -29,29 +29,34 @@ use Magento\Framework\Exception\NoSuchEntityException;
  * Class GenericButton
  * @package Aimsinfosoft\Contactus\Block\Adminhtml\Contactus\Edit
  */
-
 class GenericButton
 {
     /**
      * @var Context
-    */
+     */
     protected $context;
 
     /**
      * @var PageRepositoryInterface
-    */
+     */
     protected $pageRepository;
+
     /**
      * @param Context $context
      * @param PageRepositoryInterface $pageRepository
-    */
+     */
     public function __construct(
         Context $context,
         PageRepositoryInterface $pageRepository
-    ) {
+    )
+    {
         $this->context = $context;
         $this->pageRepository = $pageRepository;
     }
+
+     /**
+     * get the page id use getPageID function
+     */
     public function getPageId()
     {
         try {
@@ -63,13 +68,13 @@ class GenericButton
         }
         return null;
     }
+
     /**
      * Generate url by route and parameters
-     *
-     * @param   array $params
-     * @param   string $route
+     * @param string $route
+     * @param array $params
      * @return  string
-    */
+     */
     public function getUrl($route = '', $params = [])
     {
         return $this->context->getUrlBuilder()->getUrl($route, $params);

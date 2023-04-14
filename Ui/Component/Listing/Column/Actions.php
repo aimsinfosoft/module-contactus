@@ -18,7 +18,7 @@
  * @copyright   Copyright (c) Aimsinfosoft (https://www.aimsinfosoft.com)
  * @license     https://www.aimsinfosoft.com/LICENSE.txt
  */
- 
+
 namespace Aimsinfosoft\Contactus\Ui\Component\Listing\Column;
 
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
@@ -27,6 +27,10 @@ use Magento\Ui\Component\Listing\Columns\Column;
 use Aimsinfosoft\Contactus\Block\Adminhtml\Contactus\Grid\Renderer\Action\UrlBuilder;
 use Magento\Framework\UrlInterface;
 
+/**
+ * Class action
+ * @pakage Aimsinfosoft\Contactus\Ui\Component\Listing\Column
+ * */
 class Actions extends Column
 {
     /** Url path */
@@ -60,12 +64,14 @@ class Actions extends Column
         array $components = [],
         array $data = [],
         $editUrl = self::CONTACTUS_URL_PATH_EDIT
-    ) {
+    )
+    {
         $this->urlBuilder = $urlBuilder;
         $this->actionUrlBuilder = $actionUrlBuilder;
         $this->editUrl = $editUrl;
         parent::__construct($context, $uiComponentFactory, $components, $data);
     }
+
     /**
      * Prepare Data Source
      *
@@ -87,10 +93,10 @@ class Actions extends Column
                             self::CONTACTUS_URL_PATH_DELETE,
                             ['id' => $item['id']]
                         ),
-                       'label' => __('Delete'),
+                        'label' => __('Delete'),
                         'confirm' => [
-                            'title' => __('Delete %1',$item['id']),
-                            'message' => __('Are you sure you wan\'t to delete a %1 record ?',$item['id'])
+                            'title' => __('Delete %1', $item['id']),
+                            'message' => __('Are you sure you wan\'t to delete a %1 record ?', $item['id'])
                         ]
                     ];
                 }

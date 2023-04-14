@@ -20,10 +20,11 @@
  * @license     https://www.aimsinfosoft.com/LICENSE.txt
  */
 -->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="admin">
         <route id="aiadmincontactus" frontName="aiadmincontactus">
-            <module name="Aimsinfosoft_Contactus" before="Magento_Backend" />
+            <module name="Aimsinfosoft_Contactus" before="Magento_Backend"/>
         </route>
     </router>
 </config>

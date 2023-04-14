@@ -18,13 +18,13 @@
  * @copyright   Copyright (c) Aimsinfosoft (https://www.aimsinfosoft.com)
  * @license     https://www.aimsinfosoft.com/LICENSE.txt
  */
+
 namespace Aimsinfosoft\Contactus\Model\ResourceModel;
 
 /**
  * Class Contactus
  * @package Aimsinfosoft\Contactus\Model\ResourceModel
  */
-
 class Contactus extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {
     protected function _construct()

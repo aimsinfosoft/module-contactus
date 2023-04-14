@@ -25,9 +25,8 @@ namespace Aimsinfosoft\Contactus\Model;
  * Class Contactus
  * @package Aimsinfosoft\Contactus\Model
  */
-
 class Contactus extends \Magento\Framework\Model\AbstractModel
-{       
+{
     protected function _construct()
     {
         $this->_init('Aimsinfosoft\Contactus\Model\ResourceModel\Contactus');
